@@ -1,0 +1,56 @@
+
+@import '../../../../styles.scss';
+
+.accountsContainer{
+  height: 100vh;
+  width: 100%;
+
+  .accountsContainer__titles{
+    color: $title-letters-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p{
+      @include letters-shared-styles(1.2rem,'serif');
+
+    }
+    h2{
+      @include letters-shared-styles(2.4rem,'sans-serif');
+      font-weight: 700;
+    }
+
+  }
+
+  .accountsContainer__cardContainer{
+
+    padding: 10px 15px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    button{
+      background-color: $global-green;
+      border-radius: 10px;
+      color: $card-letters-color;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: -moz-fit-content;
+      height: fit-content;
+      padding: 32px 0px;
+      outline: none;
+      border: none;
+
+      p{
+        @include letters-shared-styles(1.4rem,'sans-serif');
+        margin: 5px 0px;
+      }
+    }
+  }
+
+
+}

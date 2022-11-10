@@ -1,0 +1,23 @@
+@import '../../../../styles.scss';
+
+article{
+  background-color: $global-green;
+  border-radius: 10px;
+  color: $card-letters-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px 0px;
+
+  span{
+    @include letters-shared-styles(1.2rem,'serif');
+
+  }
+  p{
+    @include letters-shared-styles(1.6rem,'sans-serif');
+    margin: 5px 0px;
+  }
+}
