@@ -3,7 +3,12 @@
 $global-green: #3ccf1b;
 $title-letters-color: #063182;
 $card-letters-color: #fafafa;
+$background: #eeeeee;
 
+.wrapper{
+  background: $background;
+   height: 100vh;
+}
 
 @mixin letters-shared-styles($font-size , $font-family) {
 

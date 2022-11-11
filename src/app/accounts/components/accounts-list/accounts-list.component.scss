@@ -5,23 +5,6 @@
   height: 100vh;
   width: 100%;
 
-  .accountsContainer__titles{
-    color: $title-letters-color;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    p{
-      @include letters-shared-styles(1.2rem,'serif');
-
-    }
-    h2{
-      @include letters-shared-styles(2.4rem,'sans-serif');
-      font-weight: 700;
-    }
-
-  }
-
   .accountsContainer__cardContainer{
 
     padding: 10px 15px;
@@ -35,6 +18,7 @@
       background-color: $global-green;
       border-radius: 10px;
       color: $card-letters-color;
+      cursor: pointer;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -54,3 +38,4 @@
 
 
 }
+

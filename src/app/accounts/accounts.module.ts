@@ -8,6 +8,9 @@ import { AccountCardComponent } from './components/account-card/account-card.com
 import { HeaderComponent } from './components/header/header.component';
 import { HandleTypeAccountPipe } from './pipes/handle-type-account.pipe';
 import { HandleAccountNumberPipe } from './pipes/handle-account-number.pipe';
+import { PaginationPipe } from './pipes/pagination.pipe';
+import { AccountDetailComponent } from './components/account-detail/account-detail.component';
+import { AccountTitleComponent } from './components/account-title/account-title.component';
 
 
 
@@ -17,14 +20,18 @@ import { HandleAccountNumberPipe } from './pipes/handle-account-number.pipe';
     AccountCardComponent,
     HeaderComponent,
     HandleTypeAccountPipe,
-    HandleAccountNumberPipe
+    HandleAccountNumberPipe,
+    PaginationPipe,
+    AccountDetailComponent,
+    AccountTitleComponent
   ],
   imports: [
     CommonModule,
     AccountsRoutingModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    AccountTitleComponent
   ]
 })
 export class AccountsModule { }

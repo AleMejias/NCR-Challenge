@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { filter, map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { Subject ,BehaviorSubject} from 'rxjs';
 import { Cuenta, Data } from '../models/account';
 
 @Injectable({
@@ -10,6 +11,7 @@ export class AccountService {
 
   private allowedAccounts: string [] = ['CC','CA'];
   private noAllowedCurrency: string [] = ['bs'];
+  accounts$ = new BehaviorSubject<Cuenta[]>([]);
 
   constructor(
     private http: HttpClient
@@ -21,9 +23,20 @@ export class AccountService {
 
     return this.http.get<Data>('https://api.npoint.io/97d89162575a9d816661').pipe(
       map(( account ) => {
-        return account.cuentas.filter(( element) => this.allowedAccounts.includes( element.tipo_letras ) && !this.noAllowedCurrency.includes(element.moneda))
+        const accounts = account.cuentas.filter(( element) => this.allowedAccounts.includes( element.tipo_letras ) && !this.noAllowedCurrency.includes(element.moneda));
+
+/*         this.accounts= accounts; */
+        return accounts
       })
     )
 
   }
+
+  getAccountDetail(accountNumber: string) { return this.accounts$.asObservable().pipe(
+    map(( account ) => account.filter((element) => element.n === accountNumber))
+  ) }
+
+  setAccountDetail( accounts: Cuenta[] ) { this.accounts$.next( accounts ); }
+
+/*   getAccountDetail( accountNumber: string ) { console.log(this.accounts) } */
 }
