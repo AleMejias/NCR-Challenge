@@ -1,0 +1,21 @@
+<section class="accountsContainer">
+
+  <app-account-title [label]="'Consulta de Saldo'"
+                     [title]="'Selecciona la Cuenta a Consultar'">
+
+  </app-account-title>
+
+  <div class="accountsContainer__cardContainer">
+
+    <button type="button" (click)="previousPage()" [ngStyle]="{'display': current_page == 1 ? 'none' : 'block'}">
+        <p>« Opciones anteriores </p>
+    </button>
+    <app-account-card *ngFor="let account of accountsCopy" [account]="account">
+
+    </app-account-card>
+    <button type="button" (click)="nextPage()" [ngStyle]="{'display': buttonNextDisabled ? 'block' : 'none'}">
+        <p>Más opciones »</p>
+    </button>
+  </div>
+
+</section>

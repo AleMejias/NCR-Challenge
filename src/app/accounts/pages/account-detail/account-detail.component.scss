@@ -1,0 +1,40 @@
+
+@import '../../../../styles.scss';
+
+section{
+  @include animation-fade-card;
+
+  color: $title-letters-color;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+
+  p{
+    @include letters-shared-styles(1.4rem,'sans-serif');
+    margin: 5px 0px;
+  }
+
+}
+
+.buttonBackContainer{
+
+  border-top: 1px solid $border-for-detail-card;
+  padding: 30px;
+
+  button{
+
+    background-color: $global-green;
+    border-radius: 5px;
+    color: $card-letters-color;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 15px 20px ;
+    outline: none;
+    border: none;
+
+  }
+  button:hover{
+    @include button-shared-animation;
+  }
+
+}
