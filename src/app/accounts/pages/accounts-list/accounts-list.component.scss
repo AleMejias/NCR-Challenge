@@ -4,8 +4,8 @@
 .accountsContainer{
   height: 100vh;
   width: 100%;
-
   .accountsContainer__cardContainer{
+    @include animation-fade-card;
 
     padding: 10px 15px;
 
@@ -33,6 +33,12 @@
         @include letters-shared-styles(1.4rem,'sans-serif');
         margin: 5px 0px;
       }
+    }
+
+    button:hover{
+
+      @include button-shared-animation;
+
     }
   }
 

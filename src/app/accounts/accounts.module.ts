@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { AccountsRoutingModule } from './accounts-routing.module';
 
-import { AccountsListComponent } from './components/accounts-list/accounts-list.component';
+import { AccountsListComponent } from './pages/accounts-list/accounts-list.component';
 import { AccountCardComponent } from './components/account-card/account-card.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HandleTypeAccountPipe } from './pipes/handle-type-account.pipe';
-import { HandleAccountNumberPipe } from './pipes/handle-account-number.pipe';
-import { PaginationPipe } from './pipes/pagination.pipe';
-import { AccountDetailComponent } from './components/account-detail/account-detail.component';
+import { AccountDetailComponent } from './pages/account-detail/account-detail.component';
 import { AccountTitleComponent } from './components/account-title/account-title.component';
+
+import { HandleAccountNumberPipe } from './pipes/handle-account-number.pipe';
+import { HandleTypeAccountPipe } from './pipes/handle-type-account.pipe';
+import { FormatBalancePipe } from './pipes/format-balance.pipe';
 
 
 
@@ -21,9 +22,9 @@ import { AccountTitleComponent } from './components/account-title/account-title.
     HeaderComponent,
     HandleTypeAccountPipe,
     HandleAccountNumberPipe,
-    PaginationPipe,
     AccountDetailComponent,
-    AccountTitleComponent
+    AccountTitleComponent,
+    FormatBalancePipe
   ],
   imports: [
     CommonModule,

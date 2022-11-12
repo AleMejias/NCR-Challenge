@@ -1,0 +1,26 @@
+<app-account-title [label]="'Consulta de Saldo'"
+                   [title]="'Este es tu saldo actual'">
+
+</app-account-title>
+
+<section>
+
+  <div>
+
+    <p>Saldo de la cuenta: {{ accountDetail.saldo | formatBalance |  number }}</p>
+    <p>Tipo de cuenta: {{ accountDetail.tipo_letras | handleTypeAccount }}</p>
+    <p>Número de cuenta: {{ accountDetail.n }}</p>
+
+  </div>
+
+
+</section>
+<div class="buttonBackContainer">
+
+  <button type="button" (click)="goBack()" title="Regresar">
+
+    Salir
+
+  </button>
+
+</div>

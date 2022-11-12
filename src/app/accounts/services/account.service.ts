@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Subject ,BehaviorSubject} from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Cuenta, Data } from '../models/account';
 
 @Injectable({
@@ -9,7 +9,14 @@ import { Cuenta, Data } from '../models/account';
 })
 export class AccountService {
 
+  /**
+   * Utilizada como plantilla para saber que tipo de cuentas estan permitidas en mi aplicación
+   */
   private allowedAccounts: string [] = ['CC','CA'];
+
+  /**
+   * Utilizada como plantilla para saber que tipo de monedas NO estan permitidas en mi aplicación
+   */
   private noAllowedCurrency: string [] = ['bs'];
   accounts$ = new BehaviorSubject<Cuenta[]>([]);
 
@@ -25,18 +32,16 @@ export class AccountService {
       map(( account ) => {
         const accounts = account.cuentas.filter(( element) => this.allowedAccounts.includes( element.tipo_letras ) && !this.noAllowedCurrency.includes(element.moneda));
 
-/*         this.accounts= accounts; */
         return accounts
       })
     )
 
   }
 
-  getAccountDetail(accountNumber: string) { return this.accounts$.asObservable().pipe(
-    map(( account ) => account.filter((element) => element.n === accountNumber))
+  getAccountDetail(accountNumber: string , accountCurrency: string ) { return this.accounts$.asObservable().pipe(
+    map(( account ) => account.filter((element) => element.n === accountNumber && element.moneda === accountCurrency ))
   ) }
 
   setAccountDetail( accounts: Cuenta[] ) { this.accounts$.next( accounts ); }
 
-/*   getAccountDetail( accountNumber: string ) { console.log(this.accounts) } */
 }

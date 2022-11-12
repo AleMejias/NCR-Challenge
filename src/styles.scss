@@ -1,18 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
 
+/* Variables globales que serán utilizadas en otros archivos de estilos */
 $global-green: #3ccf1b;
 $title-letters-color: #063182;
 $card-letters-color: #fafafa;
 $background: #eeeeee;
+$border-for-detail-card: #cdcdcd;
 
+
+body,
 .wrapper{
+
   background: $background;
-   height: 100vh;
+}
+.wrapper{
+  height: 100vh;
 }
 
+/* Mixin usado para reutilizar el tipo de letra y el tamaño en los elementos que lo precisen dentro de la aplicación */
 @mixin letters-shared-styles($font-size , $font-family) {
 
   font-size: $font-size;
   font-family: $font-family;
+
+}
+/* Mixin para reutilizar la animacion de hundimiento en los botones de Regresar, Avanzar del componente AccountList y Salir del componente AccountDetail */
+@mixin button-shared-animation() {
+
+  transition: .5s ease all;
+  transform: scale(0.9);
+
+}
+/* Mixin para reutilizar la animacion de opacity en la lista principal y en la pantalla de detail */
+
+@mixin animation-fade-card(){
+
+  animation: fadeIn 1.5s ease;
+
+  @keyframes fadeIn {
+
+    0% { opacity: 0; }
+
+  }
 
 }

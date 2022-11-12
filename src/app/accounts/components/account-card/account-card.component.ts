@@ -18,10 +18,15 @@ export class AccountCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  accountSelected( accountSelected: string ){
+  /**
+   * Tiene como proposito pasarle mediante parametros de ruta y navegar al componente AccountDetail con la información que necesita
+   * para recuperar la cuenta seleccionada por el usuario.
+   * @param accountSelected => Número de cuenta seleccionado
+   * @param accountCurrency => Tipo de moneda seleccionado
+   */
+  accountSelected( accountSelected: string , accountCurrency: string ){
 
-    console.log('SELECCIONASTE ESTE ',accountSelected)
-    this.router.navigate(['/detail'] , { queryParams: { code :accountSelected } } );
+    this.router.navigate(['/detail'] , { queryParams: { code :accountSelected , currency: accountCurrency} } );
 
   }
 
