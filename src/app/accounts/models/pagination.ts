@@ -4,5 +4,4 @@ export interface Pagination {
 
   cuentas: Cuenta[];
   buttonNextDisabled: boolean;
-  buttonPreviousDisabled: boolean;
 }

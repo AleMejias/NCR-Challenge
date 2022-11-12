@@ -20,7 +20,6 @@ export class AccountsListComponent implements OnInit {
   accumulated: number = 5;
   accounts_initial_length!: number;
   buttonNextDisabled!: boolean;
-  buttonPreviousDisabled!: boolean;
 
   constructor(
     private accountsSvc: AccountService,
@@ -43,9 +42,8 @@ export class AccountsListComponent implements OnInit {
         this.accounts= accounts;
         this.accountsSvc.setAccountDetail( this.accounts );
         this.accounts_initial_length= this.accounts.length;
-        const { cuentas , buttonNextDisabled , buttonPreviousDisabled } = this.paginationSvc.handlePagination( [...this.accounts],this.current_page);
+        const { cuentas , buttonNextDisabled } = this.paginationSvc.handlePagination( [...this.accounts],this.current_page);
         this.buttonNextDisabled = buttonNextDisabled;
-        this.buttonPreviousDisabled = buttonPreviousDisabled;
         this.accountsCopy= cuentas;
         this.sessionStorageSvc.setAccountsInSessionStorage( accounts );
 
@@ -59,9 +57,8 @@ export class AccountsListComponent implements OnInit {
 
     this.current_page-= 1;
 
-    const { cuentas , buttonNextDisabled , buttonPreviousDisabled } = this.paginationSvc.handlePagination( [...this.accounts],this.current_page);
+    const { cuentas , buttonNextDisabled } = this.paginationSvc.handlePagination( [...this.accounts],this.current_page);
     this.buttonNextDisabled = buttonNextDisabled;
-    this.buttonPreviousDisabled = buttonPreviousDisabled;
     this.accountsCopy= cuentas;
 
 
@@ -72,9 +69,8 @@ export class AccountsListComponent implements OnInit {
     this.current_page+= 1;
 
 
-    const { cuentas , buttonNextDisabled , buttonPreviousDisabled } = this.paginationSvc.handlePagination( [...this.accounts],this.current_page);
+    const { cuentas , buttonNextDisabled } = this.paginationSvc.handlePagination( [...this.accounts],this.current_page);
     this.buttonNextDisabled = buttonNextDisabled;
-    this.buttonPreviousDisabled = buttonPreviousDisabled;
     this.accountsCopy= cuentas;
   }
 

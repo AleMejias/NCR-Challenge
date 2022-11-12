@@ -15,12 +15,10 @@ export class PaginationService {
     let page_size: number;
     let accounts_length: number = accounts.length;
     let newAccountsArr: Cuenta[]= accounts;
-    let accumulated: number = 0;
     let from!: number;
     let to!: number;
     let itemsPerPage!: number;
     let buttonNextDisabled: boolean = true;
-    let buttonPreviousDisabled: boolean = false;
 
     if( current_page === 1 ) {
 
@@ -50,8 +48,7 @@ export class PaginationService {
 
     return {
       cuentas: newAccountsArr,
-      buttonNextDisabled,
-      buttonPreviousDisabled
+      buttonNextDisabled
     };
   }
 }

@@ -26,6 +26,10 @@ export class AccountService {
 
 
 
+  /**
+   * Encargado de traer los datos desde la api
+   * @returns Observable con los datos filtrados
+   */
   getAllAccounts(): Observable<Cuenta[]> {
 
     return this.http.get<Data>('https://api.npoint.io/97d89162575a9d816661').pipe(
@@ -38,10 +42,20 @@ export class AccountService {
 
   }
 
+  /**
+   * Recupera la cuenta que coincida con los parametros recibidos
+   * @param accountNumber => número de cuenta seleccionado
+   * @param accountCurrency => Tipo de moneda seleccionado
+   * @returns un array con un elemento
+   */
   getAccountDetail(accountNumber: string , accountCurrency: string ) { return this.accounts$.asObservable().pipe(
     map(( account ) => account.filter((element) => element.n === accountNumber && element.moneda === accountCurrency ))
   ) }
 
+  /**
+   *
+   * @param accounts Metodo utilizado para guardar en un observable todas las cuentas recuperadas para posteriormente trabajar mejor con los datos desde cualquier lugar
+   */
   setAccountDetail( accounts: Cuenta[] ) { this.accounts$.next( accounts ); }
 
 }
