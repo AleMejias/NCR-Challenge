@@ -26,7 +26,7 @@
 ## Agregado y consideraciones
 
 ````
-1. Decidí agregar un Spinner interceptor como complemento a que mis tests unitarios están bastante flojos
+1. Decidí agregar un Spinner interceptor como complemento debido a que mis tests unitarios están bastante flojos
 
 2. Debido a que tenemos dos valores con el mismo número de cuenta, utilice un parametro adicional en la ruta llamado "currency" para poder diferenciarlos por su tipo de moneda a la hora de recuperar el detalle.
 
