@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HandleAccountNumberPipe } from '../../pipes/handle-account-number.pipe';
+import { HandleTypeAccountPipe } from '../../pipes/handle-type-account.pipe';
 
 import { AccountCardComponent } from './account-card.component';
 
@@ -8,16 +10,19 @@ describe('AccountCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AccountCardComponent ]
+      declarations: [ AccountCardComponent ,HandleTypeAccountPipe , HandleAccountNumberPipe]
     })
     .compileComponents();
 
     fixture = TestBed.createComponent(AccountCardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    /* fixture.detectChanges(); */
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should be created', () => {
+    const fixture = TestBed.createComponent(AccountCardComponent);
+    const accountCard = fixture.componentInstance;
+
+    expect(accountCard).toBeTruthy();
   });
 });

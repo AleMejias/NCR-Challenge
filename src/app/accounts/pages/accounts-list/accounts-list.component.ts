@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 
 import { AccountService } from '../../services/account.service';
 
 import { Cuenta } from '../../models/account';
 import { PaginationService } from '../../services/pagination.service';
 import { SessionStorageService } from '../../services/session-storage.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-accounts-list',
@@ -12,6 +13,8 @@ import { SessionStorageService } from '../../services/session-storage.service';
   styleUrls: ['./accounts-list.component.scss']
 })
 export class AccountsListComponent implements OnInit {
+
+  accountsSvcSubscription!: Subscription;
 
   accounts: Cuenta[]= [];
   accountsCopy: Cuenta[]= [];

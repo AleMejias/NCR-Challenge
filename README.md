@@ -1,6 +1,6 @@
 # NcrChallenge
 
-### Antes que nada me gustaría agradecerles por la oportunidad de estar acá, con toda sincera hice las cosas con los conocimientos que cuento actualmente. La parte de test unitarios no la complete porque es un tema desconocido para mi y por razones de tiempo no pude avanzar mucho en el tema, por otra parte, me encantaría poder recibir capacitaciones o formar parte de un equipo en el se trabaje con herramientas de este tipo ya que genera un ambiente de trabajo más prolijo con código de calidad.
+### Antes que nada me gustaría agradecerles por la oportunidad de estar acá, con toda sincera hice las cosas con los conocimientos que cuento actualmente. La parte de test unitarios no la complete de la mejor manera porque es un tema desconocido para mi y por razones de tiempo no pude avanzar mucho en el tema, por otra parte, me encantaría poder recibir capacitaciones o formar parte de un equipo en el se trabaje con herramientas de este tipo ya que genera un ambiente de trabajo más prolijo con código de calidad.
 
 ## Pasos para poner en funcionamiento la aplicación: 
 
@@ -26,7 +26,7 @@
 ## Agregado y consideraciones
 
 ````
-1. Decidí agregar un Spinner interceptor como complemento a que falle en la inclusión de test unitarios
+1. Decidí agregar un Spinner interceptor como complemento a que mis tests unitarios están bastante flojos
 
 2. Debido a que tenemos dos valores con el mismo número de cuenta, utilice un parametro adicional en la ruta llamado "currency" para poder diferenciarlos por su tipo de moneda a la hora de recuperar el detalle.
 

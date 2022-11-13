@@ -32,7 +32,10 @@ import { FormatBalancePipe } from './pipes/format-balance.pipe';
   ],
   exports: [
     HeaderComponent,
-    AccountTitleComponent
+    AccountTitleComponent,
+    HandleTypeAccountPipe,
+    HandleAccountNumberPipe,
+    FormatBalancePipe
   ]
 })
 export class AccountsModule { }

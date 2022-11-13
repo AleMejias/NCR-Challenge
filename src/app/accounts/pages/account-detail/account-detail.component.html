@@ -5,7 +5,7 @@
 
 <section>
 
-  <div>
+  <div *ngIf="accountDetail">
 
     <p>Saldo de la cuenta: {{ accountDetail.saldo | formatBalance |  number }}</p>
     <p>Tipo de cuenta: {{ accountDetail.tipo_letras | handleTypeAccount }}</p>
