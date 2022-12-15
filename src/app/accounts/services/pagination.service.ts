@@ -12,6 +12,7 @@ export class PaginationService {
 
   handlePagination(accounts: Cuenta[] ,current_page: number ): Pagination{
 
+    console.log('CUENTAS RECIBIDAS ',accounts.length)
     let page_size: number;
     let accounts_length: number = accounts.length;
     let newAccountsArr: Cuenta[]= accounts;
@@ -20,7 +21,7 @@ export class PaginationService {
     let itemsPerPage!: number;
     let buttonNextDisabled: boolean = true;
 
-    if( current_page === 1 ) {
+/*     if( current_page === 1 ) {
 
       from = 0;
       to = 5;
@@ -42,9 +43,26 @@ export class PaginationService {
       newAccountsArr = newAccountsArr.slice( from , to );
     }
 
+    console.log('A VER accounts_length',accounts_length)
+    console.log('A VER from',from)
+    if( accounts_length - from  === newAccountsArr.length ) { buttonNextDisabled = false; } */
 
-    if( accounts_length - from  === newAccountsArr.length ) { buttonNextDisabled = false; }
+    if( current_page === 1 ) {
 
+      from = 0;
+      to = 5;
+      newAccountsArr = newAccountsArr.slice( from , to );
+
+    } else {
+
+      itemsPerPage = 4;
+      from = ( (itemsPerPage * current_page) - itemsPerPage ) + 1;
+      to =  (itemsPerPage * current_page) + 1;
+      newAccountsArr = newAccountsArr.slice( from , to );
+
+    }
+
+    if( newAccountsArr.length < current_page ) { buttonNextDisabled = false; }
 
     return {
       cuentas: newAccountsArr,
